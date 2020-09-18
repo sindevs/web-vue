@@ -4,6 +4,8 @@ import pathify from './pathify'
 import {make} from 'vuex-pathify'
 import createPersistedState from 'vuex-persistedstate'
 
+//bcel store style
+
 const state = {
 	token: null,
 	session: null,

@@ -1,6 +1,7 @@
 import axios from 'axios'
 //import store from './store'
 
+
 export default {
 	login(credential) {
 		return axios.post('/v1/auth', credential)
