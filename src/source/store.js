@@ -5,6 +5,7 @@ import {make} from 'vuex-pathify'
 import createPersistedState from 'vuex-persistedstate'
 
 //bcel store style
+//,,vloof
 
 const state = {
 	token: null,
