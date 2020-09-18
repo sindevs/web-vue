@@ -1,0 +1,45 @@
+LaoNumberString(n) {
+      // var leveltext = ['', 'ສິບ', 'ຮ້ອຍ', 'ພັນ', 'ໝື່ນ', 'ແສນ']
+      let leveltext = ["", "ສິບ", "ຮ້ອຍ", "ພັນ", "ໝື່ນ", "ແສນ"];
+      let numtext = [
+        "",
+        "ໜຶ່ງ",
+        "ສອງ",
+        "ສາມ",
+        "ສີ່",
+        "ຫ້າ",
+        "ຫົກ",
+        "ເຈັດ",
+        "ແປດ",
+        "ເກົ້າ"
+      ];
+
+      let res = "";
+
+      let num = n + "";
+      let et = false;
+      for (let i = 0; i < num.length; i++) {
+        let val = parseInt(num.substr(i, 1));
+        let pos = num.length - i - 1;
+        if (val > 0) {
+          if (val === 1 && pos % leveltext.length === 1) {
+            res += "ສິບ";
+          } else if (val === 2 && pos % leveltext.length === 1) {
+            res += "ຊາວ";
+          } else if (val === 1 && pos % leveltext.length === 0 && et) {
+            res += "ເອັດ";
+          } else {
+            res += numtext[val] + leveltext[pos % leveltext.length];
+            et = false;
+          }
+        }
+        if (pos % leveltext.length === 0 && pos > 0) {
+          res += "ລ້ານ";
+        }
+        if (val !== 0 && pos % leveltext.length === 1) {
+          et = true;
+        }
+      }
+      return res ? res : "-";
+    }
+  }
